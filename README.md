@@ -1,4 +1,4 @@
-# Working with dplyr
+# Creating packages with R
 
 
 ## Summary
@@ -7,7 +7,7 @@ This repository provides materials for a session that is part of the [I2DS Tools
 
 ### Session contents
 
-This session will introduce you to the modern data wrangling workflow with R and dplyr. Data wrangling is one of the core steps in the data science workflow. dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges, including the manipulation of datasets and variables. 
+This session will introduce you to the state of the art way to write your own packages in R. Yes, this is very cool. Writing packages (stopped here FP) is one of the core steps in the data science workflow. dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges, including the manipulation of datasets and variables. 
 
 ### Main learning objectives
 
@@ -16,7 +16,7 @@ The goals of this session are to (1) equip you with conceptual knowledge about t
 
 ## Instructors
 
-- Simon Munzert ([website](http://simonmunzert.github.io/), [twitter](https://twitter.com/simonsaysnothin))
+- Fabian Pawelczyk ([website](http://fpawelczyk.github.io/), [twitter](https://twitter.com/PawelczykFabian))
 - Kermit the Frog ([website](https://en.wikipedia.org/wiki/Kermit_the_Frog), [twitter](https://twitter.com/KermitTheFrog))
 
 
@@ -24,7 +24,7 @@ The goals of this session are to (1) equip you with conceptual knowledge about t
 
 - [dplyr overview at dplyr.tidyverse.org](https://dplyr.tidyverse.org/)
 - [Hands-on dplyr tutorial by Data School on YouTube](https://www.youtube.com/watch?v=jWjqLW-u3hc)
-- [R for Data Science book - part on data wrangling](https://r4ds.had.co.nz/wrangle-intro.html)
+- [R packages book](https://r-pkgs.org/introduction.html)
 
 
 ## License
