@@ -1,0 +1,176 @@
+---
+title: "Creating R Packages in RStudio"
+subtitle: "Workshop by Fabian Pawelczyk and Niklas Pawelzik"
+output: 
+  html_document:
+    toc: TRUE
+    df_print: paged
+    number_sections: FALSE
+    highlight: tango
+    theme: lumen
+    toc_depth: 3
+    toc_float: true
+    css: custom.css 
+    self_contained: false
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1. Open a template package:
+
+In order to create a package, perform the following steps:
+
+    "File", "New Project", "New Directory", "R-Package"
+
+        Set Name, Set Sub-directory
+
+A package template is created, go ahead and explore it!
+
+```{r}
+# insert GIF of path to Package Creation
+# insert GIF or Screenshot of Package Anatomy/structure 
+```
+
+ADD COMMENT THAT WE WILL NOT PRE-LOAD PACKAGES, but will use "devtools" and "usethis"
+
+Load your helper packages (after ensuring they are installed)
+
+```{r}
+# install.packages(c("devtools", "usethis"))
+# library(devtools)
+```
+
+## 2. Create a first function for your package
+
+Create new function in the package you created, name it "basic_summary"
+
+```{r}
+# usethis::use_r("FUNCTION_NAME")
+# FIGURE OUT: usethis::use_git("FUNCTION_NAME")
+# FIGURE OUT: usethis::use_github("FUNCTION_NAME")
+```
+
+Insert basic functions into the newly created .R file
+
+```{r}
+# function that returns:
+  # 1. box plot and histogram of the distribution of the input
+basic_summary <- function(x){
+  par(mrow=c (1, 2))
+  boxplot(x)
+  hist(x)
+  par(mrow=c (1, 1))
+  # 2. a data frame with a basic statistical description of the input
+  data.frame(
+    min = min(x),
+    max = max(x),
+    med = median(x),
+    mean = mean(x)
+)
+  }
+```
+
+## 3. Update your package structure
+
+Connect our function with the rest of our package structure, use "Code", "Insert Roxygen Skeleton"
+
+In order to take full advantage of Roxygen support, we delete the pre-existing "NAMESPACE"-file
+
+Correctly filled out, the Rogygen comments allow you to update namespace, man and description(?)
+
+```{r}
+# delete pre-existing "NAMESPACE"-file
+# use "Code", "Insert Roxygen Skeleton"
+# Title of the function w/ @title
+# Description of the function purpose with @description
+# Documenting the function arguments/parameters with @param
+# Specifying it for export with @export
+# If it requires external packages, reference the package or specific package functions with @import and @importFrom
+# What does the function return with @return
+```
+
+Next, you can let roxygen implement these changes into your package structure
+
+```{r}
+# devtools::document()
+```
+
+Safe this file and check whether it is correctly stored in your package´s R-folder
+
+```{r}
+# insert GIF of going to R-folder and seeing package created called basic_summary.R
+```
+
+Congrats, you created your first function within your first own R-Package!
+
+## 4. Check your work
+
+Next, let´s confirm this worked as intended.
+
+When it comes to interacting with the functions in our package, let´s establish good habits early on:
+
+Please start by clearing objects from your environment and use the following code load them again:
+
+```{r}
+# devtools::load_all()
+```
+
+### Bonus Question
+Can you explain why this approach is the best way to interact with the newly created functions in your package?
+
+```{r}
+# difficult question, possibly delete. Aims for: Makes sense for instance when we use a lot of functions in our package, ensure interactions and links between functions work as intended
+```
+
+### Bonus Question
+Can you spot a difference from using load_all() for the functions in your package and creating a function in a regular R-Studio session?
+
+```{r}
+# ANSWER: The loaded functions from "load_all()" do not appear in the global environment 
+```
+
+Once you loaded all functions from your package again, we are ready to actually test them.
+
+For this, again we establish good practices from the beginning by introducing package testing code:
+
+```{r}
+# devtools::check()
+# Note: This checks only for a standardized set of formal errors
+# Very useful, but we will usually want to add further tests (using "usethis::use_testthat()") that ensure our function works in the specific way we intended. Limited time, we cannot cover this part in this workshop 
+```
+
+### Bonus Question
+Do you receive any errors or warnings? If so, do you understand them? Can you check and correct them?
+
+```{r}
+# GIF/screenshot of warnings?
+# take care of license issue: "usethis::use_mit_license()"
+# depending on whether we deleted the "hello_world" function, we might get an error message
+```
+
+Install and load your package and test it with a data set you load!
+
+```{r}
+# devtools::install() 
+# library(INSERT_PACKAGE_NAME)
+# GIF/screenshot of warnings?
+```
+
+Ask RStudio for help on your function
+
+```{r}
+# ?basic_summary
+# GIF/screenshot?
+```
+
+### Bonus Question
+Can you load your package into your Github?
+
+```{r}
+# GIF/screenshot?
+```
+
+Note that the `echo = FALSE` parameter prevents printing of the R code that generated the plot.
