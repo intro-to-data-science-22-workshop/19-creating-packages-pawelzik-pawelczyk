@@ -17,7 +17,7 @@ The goals of this session are to (1) equip you with conceptual knowledge about t
 ## Instructors
 
 - Fabian Pawelczyk ([website](http://fpawelczyk.github.io/), [twitter](https://twitter.com/PawelczykFabian))
-- Kermit the Frog ([website](https://en.wikipedia.org/wiki/Kermit_the_Frog), [twitter](https://twitter.com/KermitTheFrog))
+- Niklas Pawelzik ([website](https://github.com/nikpaw))
 
 
 ## Further resources
