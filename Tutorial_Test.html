@@ -11,7 +11,7 @@
 
 
 
-<title>Creating R Packages</title>
+<title>Creating R Packages in RStudio</title>
 
 <script src="Tutorial_Test_files/header-attrs-2.16/header-attrs.js"></script>
 <script src="Tutorial_Test_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -335,14 +335,15 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Creating R Packages</h1>
-<h3 class="subtitle">Fabian Pawelczyk and Niklas Pawelzik</h3>
+<h1 class="title toc-ignore">Creating R Packages in RStudio</h1>
+<h3 class="subtitle">Workshop by Fabian Pawelczyk and Niklas
+Pawelzik</h3>
 
 </div>
 
 
 <div id="open-a-template-package" class="section level2">
-<h2>Open a template package:</h2>
+<h2>1. Open a template package:</h2>
 <p>In order to create a package, perform the following steps:</p>
 <pre><code>&quot;File&quot;, &quot;New Project&quot;, &quot;New Directory&quot;, &quot;R-Package&quot;
 
@@ -358,7 +359,7 @@ div.tocify {
 </div>
 <div id="create-a-first-function-for-your-package"
 class="section level2">
-<h2>Create a first function for your package</h2>
+<h2>2. Create a first function for your package</h2>
 <p>Create new function in the package you created, name it
 “basic_summary”</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># usethis::use_r(&quot;FUNCTION_NAME&quot;)</span></span>
@@ -382,7 +383,7 @@ class="section level2">
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
 </div>
 <div id="update-your-package-structure" class="section level2">
-<h2>Update your package structure</h2>
+<h2>3. Update your package structure</h2>
 <p>Connect our function with the rest of our package structure, use
 “Code”, “Insert Roxygen Skeleton”</p>
 <p>In order to take full advantage of Roxygen support, we delete the
@@ -407,26 +408,23 @@ package´s R-folder</p>
 R-Package!</p>
 </div>
 <div id="check-your-work" class="section level2">
-<h2>Check your work</h2>
+<h2>4. Check your work</h2>
 <p>Next, let´s confirm this worked as intended.</p>
 <p>When it comes to interacting with the functions in our package, let´s
 establish good habits early on:</p>
 <p>Please start by clearing objects from your environment and use the
 following code load them again:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::load_all()</span></span></code></pre></div>
-<div
-id="question-can-you-explain-why-this-approach-is-the-best-way-to-interact-with-the-newly-created-functions-in-your-package"
-class="section level3">
-<h3>Question: Can you explain why this approach is the best way to
-interact with the newly created functions in your package?</h3>
+<div id="bonus-question" class="section level3">
+<h3>Bonus Question:</h3>
+<p>Can you explain why this approach is the best way to interact with
+the newly created functions in your package?</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># difficult question, possibly delete. Aims for: Makes sense for instance when we use a lot of functions in our package, ensure interactions and links between functions work as intended</span></span></code></pre></div>
 </div>
-<div
-id="question-can-you-spot-a-difference-from-using-load_all-for-the-functions-in-your-package-and-creating-a-function-in-a-regular-r-studio-session"
-class="section level3">
-<h3>Question: Can you spot a difference from using load_all() for the
-functions in your package and creating a function in a regular R-Studio
-session?</h3>
+<div id="bonus-question-1" class="section level3">
+<h3>Bonus Question:</h3>
+<p>Can you spot a difference from using load_all() for the functions in
+your package and creating a function in a regular R-Studio session?</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANSWER: The loaded functions from &quot;load_all()&quot; do not appear in the global environment </span></span></code></pre></div>
 <p>Once you loaded all functions from your package again, we are ready
 to actually test them.</p>
@@ -437,14 +435,14 @@ introducing package testing code:</p>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Very useful, but we will usually want to add further tests (using &quot;usethis::use_testthat()&quot;) that ensure our function works in the specific way we intended. Limited time, we cannot cover this part in this workshop </span></span></code></pre></div>
 </div>
 <div
-id="question-do-you-receive-any-errors-or-warnings-if-so-do-you-understand-them-can-you-check-and-correct-them"
+id="bonus-question-do-you-receive-any-errors-or-warnings-if-so-do-you-understand-them-can-you-check-and-correct-them"
 class="section level3">
-<h3>Question: Do you receive any errors or warnings? If so, do you
+<h3>Bonus Question: Do you receive any errors or warnings? If so, do you
 understand them? Can you check and correct them?</h3>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># GIF/screenshot of warnings?</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># take care of license issue: &quot;usethis::use_mit_license()&quot;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># depending on whether we deleted the &quot;hello_world&quot; function, we might get an error message</span></span></code></pre></div>
-<p>Install and load your package and test it with a dataset you
+<p>Install and load your package and test it with a data set you
 load!</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install() </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># library(INSERT_PACKAGE_NAME)</span></span>
@@ -453,9 +451,9 @@ load!</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ?basic_summary</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># GIF/screenshot?</span></span></code></pre></div>
 </div>
-<div id="optitonal-can-you-load-your-package-into-your-github"
+<div id="bonus-question-can-you-load-your-package-into-your-github"
 class="section level3">
-<h3>Optitonal: Can you load your package into your Github?</h3>
+<h3>Bonus Question: Can you load your package into your Github?</h3>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># GIF/screenshot?</span></span></code></pre></div>
 <p>Note that the <code>echo = FALSE</code> parameter prevents printing
 of the R code that generated the plot.</p>

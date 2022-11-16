@@ -142,7 +142,8 @@ For this, again we establish good practices from the beginning by introducing pa
 # Very useful, but we will usually want to add further tests (using "usethis::use_testthat()") that ensure our function works in the specific way we intended. Limited time, we cannot cover this part in this workshop 
 ```
 
-### Bonus Question: Do you receive any errors or warnings? If so, do you understand them? Can you check and correct them?
+### Bonus Question:
+Do you receive any errors or warnings? If so, do you understand them? Can you check and correct them?
 
 ```{r}
 # GIF/screenshot of warnings?
@@ -165,7 +166,8 @@ Ask RStudio for help on your function
 # GIF/screenshot?
 ```
 
-### Bonus Question: Can you load your package into your Github?
+### Bonus Question:
+Can you load your package into your Github?
 
 ```{r}
 # GIF/screenshot?
