@@ -34,7 +34,6 @@ Once your package template is created, go ahead and explore it!
 #    "File", "New Project", "New Directory", "R-Package"
 #     Set Name, Set Sub-directory
 
-
 ## INSERT: GIF of path to Package Creation
 ## INSERT: GIF or Screenshot of Package Anatomy/structure 
 ```
