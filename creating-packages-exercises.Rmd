@@ -12,38 +12,43 @@ output:
     toc_float: true
     css: custom.css 
     self_contained: false
-
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## 1. Open a template package:
+## Preface Text(?)
+Create preface text, including:
+COMMENT THAT WE WILL NOT PRE-LOAD PACKAGES, but will use "devtools" and "usethis"
 
-In order to create a package, perform the following steps:
+## 1. Open a template package
 
-    "File", "New Project", "New Directory", "R-Package"
-
-        Set Name, Set Sub-directory
-
-A package template is created, go ahead and explore it!
+Create a New Project for your package in RStudio.\
+Once your package template is created, go ahead and explore it!
 
 ```{r}
-# insert GIF of path to Package Creation
-# insert GIF or Screenshot of Package Anatomy/structure 
+# In order to create a package, perform the following steps:
+#    "File", "New Project", "New Directory", "R-Package"
+#     Set Name, Set Sub-directory
+
+
+## insert GIF of path to Package Creation
+## insert GIF or Screenshot of Package Anatomy/structure 
 ```
 
-ADD COMMENT THAT WE WILL NOT PRE-LOAD PACKAGES, but will use "devtools" and "usethis"
-
-Load your helper packages (after ensuring they are installed)
+For the purpose of greater clarity within this tutorial, we will always indicate the package we take a function from. In general, creating a package in R in the way suggested by this workshop relies on two packages you should install on your local machine:
+"devtools" and "usethis". Ensure that these two packages are installed on your machine!
 
 ```{r}
+# check whether the packages are already installed on your machine:
+# installed.packages(c("devtools", "usethis"))
+# if necessary, install the packages on your machine:
 # install.packages(c("devtools", "usethis"))
 # library(devtools)
 ```
 
-## 2. Create a first function for your package
+## 2. Add a function to your package
 
 Create new function in the package you created, name it "basic_summary"
 
@@ -53,7 +58,7 @@ Create new function in the package you created, name it "basic_summary"
 # FIGURE OUT: usethis::use_github("FUNCTION_NAME")
 ```
 
-Insert basic functions into the newly created .R file
+Insert the following function into the newly created .R file:
 
 ```{r}
 # function that returns:
@@ -76,10 +81,8 @@ basic_summary <- function(x){
 ## 3. Update your package structure
 
 Connect our function with the rest of our package structure, use "Code", "Insert Roxygen Skeleton"
-
-In order to take full advantage of Roxygen support, we delete the pre-existing "NAMESPACE"-file
-
-Correctly filled out, the Rogygen comments allow you to update namespace, man and description(?)
+Correctly filled out, the Rogygen comments allow you to update namespace, man and description.
+(Note: In order to take full advantage of Roxygen support, we delete the pre-existing "NAMESPACE"-file.)
 
 ```{r}
 # delete pre-existing "NAMESPACE"-file
@@ -92,7 +95,7 @@ Correctly filled out, the Rogygen comments allow you to update namespace, man an
 # What does the function return with @return
 ```
 
-Next, you can let roxygen implement these changes into your package structure
+Next, you can implement these roxygen inputs into your package structure.
 
 ```{r}
 # devtools::document()
@@ -104,28 +107,28 @@ Safe this file and check whether it is correctly stored in your package´s R-fol
 # insert GIF of going to R-folder and seeing package created called basic_summary.R
 ```
 
-Congrats, you created your first function within your first own R-Package!
+Congrats, you created your first function within your own R-Package!
 
 ## 4. Check your work
 
-Next, let´s confirm this worked as intended.
-
-When it comes to interacting with the functions in our package, let´s establish good habits early on:
-
-Please start by clearing objects from your environment and use the following code load them again:
+Next, let´s make extra sure this worked as intended by clearing your environment and (re-)loading all functions from your package.
 
 ```{r}
+# When it comes to interacting with the functions in our package, let´s establish good habits early on.
+# Please start by clearing objects from your environment and use the following code load them again:
 # devtools::load_all()
 ```
 
-### Bonus Question
+### Bonus Question 1: load_all()
+
 Can you explain why this approach is the best way to interact with the newly created functions in your package?
 
 ```{r}
 # difficult question, possibly delete. Aims for: Makes sense for instance when we use a lot of functions in our package, ensure interactions and links between functions work as intended
 ```
 
-### Bonus Question
+### Bonus Question 2: load_all()
+
 Can you spot a difference from using load_all() for the functions in your package and creating a function in a regular R-Studio session?
 
 ```{r}
@@ -134,7 +137,11 @@ Can you spot a difference from using load_all() for the functions in your packag
 
 Once you loaded all functions from your package again, we are ready to actually test them.
 
-For this, again we establish good practices from the beginning by introducing package testing code:
+For this, again we want to establish good practices from day one on!
+
+Please make sure to have a complete formal check performed by using package testing code.
+
+(Note: Usually, we will want to add further tests (using "usethis::use_testthat()") that ensure our function works in the specific way we intended. Given the limited time we have at our hands, we cannot cover this part in this workshop unfortunately.)
 
 ```{r}
 # devtools::check()
@@ -142,16 +149,21 @@ For this, again we establish good practices from the beginning by introducing pa
 # Very useful, but we will usually want to add further tests (using "usethis::use_testthat()") that ensure our function works in the specific way we intended. Limited time, we cannot cover this part in this workshop 
 ```
 
-### Bonus Question
-Do you receive any errors or warnings? If so, do you understand them? Can you check and correct them?
+Have you received warning or error messages?
+Don´t worry, that is completely normal, at any stage of your package creation workflow and in fact especially at this stage. 
+What matters is: Do you understand the output your machine provides you?
+Can you check and correct the issues?
+Once you solved the problems, check re-load and check your package again.
 
 ```{r}
 # GIF/screenshot of warnings?
 # take care of license issue: "usethis::use_mit_license()"
 # depending on whether we deleted the "hello_world" function, we might get an error message
+# devtools::check()
 ```
 
-Install and load your package and test it with a data set you load!
+
+Install and load your package and test it with the height variable from the star_wars data set!
 
 ```{r}
 # devtools::install() 
@@ -159,15 +171,25 @@ Install and load your package and test it with a data set you load!
 # GIF/screenshot of warnings?
 ```
 
-Ask RStudio for help on your function
+### Bonus Question 3: Function Workability
+Any idea why we asked you to test our package on the height variable instead of the species variable?
+
+```{r}
+# CONFIRM: Our function can only deal with numeric input, not with strings. Different input will probably result in an error.
+# This is where we would specify input problems or limitations of our function with test() functions to ease the pain during future use of our packages! 
+```
+
+### Bonus Task 1: Help with functions
+Ask RStudio for help on your function!
 
 ```{r}
 # ?basic_summary
 # GIF/screenshot?
 ```
 
-### Bonus Question
-Can you load your package into your Github?
+### Bonus Task 2: Github Repository
+
+Load your package into your Github Repository!
 
 ```{r}
 # GIF/screenshot?
