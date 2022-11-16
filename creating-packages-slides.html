@@ -142,7 +142,7 @@ In general, the pro-arguments are very analogue to the ones for using functions 
 
 - **Share workflows** and empower yourself AND others (descriptions becoming crucial here!)
 
-- Packages make your work easier, faster and more reproducible. R packages let you share these functions or reuse them another time 
+- Packages make our work easier, faster and more reproducible. R packages let us share these functions or reuse them another time 
 
 &lt;!--: Let's assume you want to get the clean text data from parliamentary speeches to run a NLP model. Instead of applying multiple steps on each document, e.g. downloading the stenographic reports, rename the documents manually and retrieve the relevant text data from pdf we build a function that runs all these steps on each document automatically and outputs us a clean data frame with all relevant variables such as text, speaker etc. Easy to see the advantage of the function timewise. --&gt;
 
@@ -204,7 +204,9 @@ name: tools
 # Relevant commands: _create_package()_
 ### Create a blank package
 
-Can call `usethis::create_package()` or use the RStudio GUI.
+- We can call `usethis::create_package()` 
+
+- Alternatively, we can use the RStudio GUI.
 
 ![A gif of using the RStudio IDE to create a new blank package.](https://raw.githubusercontent.com/jthomasmock/pkg-building/master/images/rstudio-create-pkg.gif)
 
@@ -212,7 +214,21 @@ Can call `usethis::create_package()` or use the RStudio GUI.
 
 # Relevant commands: _use_r()_
 
-Where do we want to define our function? We want to save it in an `.R` file in our `R/` subdirectory folder of our package (we saw this above already). For beginners it is recommended to create a new `.R` file for each function of our package and name the file similar to the function. More advanced user begin to group related functions together. In order to save our first function we can simply use the following syntax:
+Where do we want to define our function?
+
+- We want to save it in an `.R` file in our `R/` subdirectory folder of our package (we saw this above already).
+
+--
+
+- For beginners it is recommended to create a new `.R` file for each function of our package and name the file similar to the function.
+
+--
+
+- More advanced user begin to group related functions together. 
+
+--
+
+- In order to save our first function we can simply use the following syntax:
 
 --
 
@@ -225,7 +241,16 @@ R&gt; usethis::use_r("sq")
 
 # Relevant commands: _use_r()_
 
-Where do we want to define our function? We want to save it in an `.R` file in our `R/` subdirectory folder of our package (we saw this above already). For beginners it is recommended to create a new `.R` file for each function of our package and name the file similar to the function. More advanced user begin to group related functions together. In order to save our first function we can simply use the following syntax:
+Where do we want to define our function?
+
+- We want to save it in an `.R` file in our `R/` subdirectory folder of our package (we saw this above already).
+
+
+- For beginners it is recommended to create a new `.R` file for each function of our package and name the file similar to the function.
+
+- More advanced user begin to group related functions together. 
+
+- In order to save our first function we can simply use the following syntax:
 
 
 ```r
@@ -233,23 +258,27 @@ R&gt; usethis::use_r("sq")
 ```
 
 
-Note: After executing the `use_r()` command we can use our function although it is not defined in our global environment. We already get some package-vibes here, right? 
-Also, put **only** the definition of our new function (in this case`sq()`) into the `R/sq.R` file and save it. Otherwise one can easily run into problems.
+- Note: After executing the `use_r()` command we can use our function although it is **not defined in our global environment**. 
+
+--
+
+- Also, make sure to put **only** the definition of our new function (in this case `sq()`) into the `R/sq.R` file and save it. Otherwise we run into problems.
 
 ---
 
 # Relevant commands: _load_all()_
 
-In order to experiment with our created package we can use `devtools::load_all()`.
+- In order to experiment with our created package we can use `devtools::load_all()`.
 
 --
 
-To keep it simple: `devtools::load_all()` loads our package. It roughly simulates what happens when a package is installed and loaded with `library()`. `load_all()` will make our function available, although it does not appear in our global environment.
+- To keep it simple: `load_all()` loads our package. It roughly *simulates* what happens when a package is installed and loaded with `library()`. `load_all()` will make our function available, although it *does not appear in our global environment*.
 
 --
 
-After loading the package it is recommended to confirm that the minimal function is working.
+- After _loading_ the package it is recommended to confirm that the minimal function is working. Just try it out!
 
+---
 
 # Relevant commands: _check()_
 
@@ -264,7 +293,7 @@ R&gt; devtools::check()
 
 --
 
-After running a lot of checks the `check`&lt;sup&gt;1&lt;/sup&gt; function gives us a summary at the end that tells us how many errors, warnings or notes are returned.
+After running a lot of checks the `check`&lt;sup&gt;1&lt;/sup&gt; function finally gives us a summary that tells us how many errors, warnings or notes are returned.
 
 .footnote[&lt;sup&gt;1&lt;/sup&gt; **Good practice:** It's important to run this frequently, as you would rather have small moments of friction to fix, rather than doing it much later and having an overwhelming amount of changes to make.]
 
@@ -276,7 +305,7 @@ After the first `check()` we would at least get one warning: the **license is mi
 
 Since software licensing is a rather complicated field because it lies at the intersection between programming and law, we will simplify this part. The license we give indicates how authors want their code to be treated.
 
-In our example we will go for the `use_mit_license()`. But if you're interested in this topic we will link you a good resource and you can read more about it:
+In our example we will go for the `use_mit_license()`. But if you're interested in this topic more deeply we link you a good resource and you can read more about it:
 
 &gt; [Pick a License, Any License by Jeff Atwood](https://blog.codinghorror.com/pick-a-license-any-license/)
 
@@ -287,17 +316,28 @@ In our example we will go for the `use_mit_license()`. But if you're interested 
 
 # Relevant commands: _document()_
 
-A big advantage of packages and the functions that come along is the possibility to call the help `?` function. Let's add useful documentation around our package and our function `sq()`. For doing so, we need a special R documentation file, `man/sq.Rd`&lt;sup&gt;2&lt;/sup&gt;.
+- A big advantage of packages and the functions that come along is the possibility to call the help `?` function.
+
+- Let's add useful documentation around our package and our function `sq()` in order to make useful help. 
+
+- For doing so, we need a special R documentation file: `man/sq.Rd`&lt;sup&gt;2&lt;/sup&gt;.
 
 .footnote[&lt;sup&gt;2&lt;/sup&gt; Note: man stands for manual.]
 
-For adding our documentation to the package we open `R/sq.R` in the source editor and we put our cursor somewhere in the `sq.R` function definition. We than can click in RStudio _Code &gt; Insert roxygen skeleton_. This will add special comments (a template) that begins each line with `#'`. Now we can easily type in the relevant description of our function `sq`.
+--
 
-After inserting all the documentation we want to specify we need to save this roxygen comments into `man/sq.Rd`. We can do so using `devtools::document()`.
+- For adding our documentation to the package we open `R/sq.R` and we add a template to our defined function which includes _special_ comments. We can do so via: 
+
+&gt; **Code &gt; Insert roxygen skeleton**
 
 --
 
-Do we want to add the specifications of the roxygen skeleton such as title, description etc?
+- After adding relevant information, such as the type of input the function accepts or a minimal working example we need to update our package so that it includes our specified roxygen comments. We can do so using:
+
+
+```r
+R&gt; devtools::document()
+```
 
 ---
 
