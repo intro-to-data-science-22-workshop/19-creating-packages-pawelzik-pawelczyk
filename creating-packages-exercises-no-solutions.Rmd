@@ -10,10 +10,10 @@ output:
     theme: lumen
     toc_depth: 3
     toc_float: true
-    css: custom.css 
+    css: libs/custom.css 
     self_contained: false
     includes:
-      after_body: footer.html
+      after_body: libs/footer.html
 editor_options: 
   markdown: 
     wrap: sentence

@@ -6,7 +6,7 @@ institute: "[Hertie School MDS cohort 2024](https://github.com/intro-to-data-sci
 date: "2022/11/15 (updated: `r Sys.Date()`)"
 output:
    xaringan::moon_reader:
-    css: [default, 'simons-touch.css', metropolis, metropolis-fonts] 
+    css: [default, 'libs/simons-touch.css', metropolis, metropolis-fonts] 
     lib_dir: libs
     nature:
       highlightStyle: github
