@@ -37,6 +37,8 @@ Once your package template is created, go ahead and explore it!
 ## INSERT: GIF of path to Package Creation
 ## INSERT: GIF or Screenshot of Package Anatomy/structure 
 ```
+![Create a package template in Rstudio.](https://raw.githubusercontent.com/jthomasmock/pkg-building/master/images/rstudio-create-pkg.gif)
+
 
 For the purpose of greater clarity within this tutorial, we will always indicate the package we take a function from. In general, creating a package in R in the way suggested by this workshop relies on two packages you should install on your local machine:
 "devtools" and "usethis". Ensure that these two packages are installed on your machine!
