@@ -13,7 +13,7 @@
 
 <title>Creating R Packages in RStudio</title>
 
-<script src="creating-packages-exercises_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="creating-packages-exercises_files/header-attrs-2.13/header-attrs.js"></script>
 <script src="creating-packages-exercises_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="creating-packages-exercises_files/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
@@ -127,20 +127,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    var j = 0;
-    while (j < rules.length) {
+    for (var j = 0; j < rules.length; j++) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
-        j++;
-        continue;
-      }
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') {
-        j++;
-        continue;
-      }
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -487,6 +480,21 @@ of the R code that generated the plot.</p>
 </div>
 </div>
 
+&nbsp;
+<hr />
+<p style="text-align: center;">by Niklas Pawelzik & Fabian Pawelczyk</a></p>
+<p style="text-align: center;"><span style="color: #808080;"><em> 2022 Workshop Exercises for Intro to Data Science, taught by Simon Munzert</em></span></p>
+<p style="text-align: center;"><span style="color: #808080;"><em><a href="https://www.hertie-school.org/en/">Hertie School, Berlin</em></span></p>
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="https://github.com/intro-to-data-science-22-workshop/19-creating-packages-pawelzik-pawelczyk"  <i class="fab fa-github"></i><a>
+</p>
+
+&nbsp;
 
 
 </div>

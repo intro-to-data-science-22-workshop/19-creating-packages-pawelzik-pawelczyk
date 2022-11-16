@@ -12,6 +12,8 @@ output:
     toc_float: true
     css: custom.css 
     self_contained: false
+    includes:
+      after_body: footer.html
 ---
 
 ```{r setup, include=FALSE}
