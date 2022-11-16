@@ -49,14 +49,11 @@ class: center, middle, inverse, title-slide
 &lt;br&gt;
 
 
-1. [Motivation: Packages and Functions](#packages)
+1. [Motivation: Why Packages?](#packages)
 
 2. [Anatomy and Tools for crafting packages](#tools)
 
 3. ['The Whole Game'](#game)
-
-
-
 
 
 &lt;!-- ############################################ --&gt;
@@ -65,9 +62,6 @@ class: inverse, center, middle
 name: packages
 
 # Packages
-
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
-
 
 ---
 
@@ -88,19 +82,21 @@ Put it very simple: packages are a bundle of **functions**. However, they offer 
 
 --
 
-We will now learn the basics of creating our own packages with R. We will go along the following outline:
+We will now learn the basics of creating our own packages with R. We will do so with the help of three questions:
 
-- What was a function again?
+
 - Why do we need packages?
-- **How do we build packages?**
-
+- What are the components of a package?
+- How do we build packages?
 
 ---
+
+&lt;!---
 # Detour: Functions
 .pull-left[
 Why functions? Because they have the potential to save enormous amount of time and therefore gives us more time to think about more substantial questions. A function usually consists of:
 
-- A function **name** that informas the user about the function's purpose
+- A function **name** that informs the user about the function's purpose
 - **ARGUMENTS** to the function that controlling the output of a function
 - **BODY** that represents all the code used inside
 - **return value**: what should the function return?
@@ -112,13 +108,11 @@ R&gt; name &lt;- function(ARGUMENTS) {
 +     return(VALUE)
 +   }
 ```
-]
+] ----&gt;
 
---
-
+&lt;!---
 .pull-right[
 Let's look briefly at an example function - one that coverts any value to it's squared value.
-
 
 ```r
 R&gt; sq &lt;- function(x) {
@@ -128,17 +122,16 @@ R&gt; sq &lt;- function(x) {
 + }
 ```
 ]
+---&gt;
 
----
 # Creating packages
-
 ### Why creating packages?
 
 People usually build packages to **save time**. For instance, some institutions have a _corporate identity_, so they always use charts in _specific colours_ and often make use of their _logo_ somewhere. All those things could also be part of a package.
 
 In general, the pro-arguments are very analogue to the ones for using functions but:
 
-- We can to **reuse** the functions
+- We can **reuse** the functions
 
 - **Share workflows** and empower yourself AND others (descriptions becoming crucial here!)
 
@@ -177,11 +170,7 @@ name: tools
 
 --
 
-* Tests that confirm our function "works as intended"  
-
---
-
-* Other things (installed files, compiled code, data, tutorials, vignettes)
+* Other things (installed files, compiled code, data, tutorials, vignettes and tests)
 
 ---
 
@@ -214,56 +203,28 @@ name: tools
 
 # Relevant commands: _use_r()_
 
+.pull-left[
 Where do we want to define our function?
 
-- We want to save it in an `.R` file in our `R/` subdirectory folder of our package (we saw this above already).
-
---
-
-- For beginners it is recommended to create a new `.R` file for each function of our package and name the file similar to the function.
-
---
-
-- More advanced user begin to group related functions together. 
-
---
-
-- In order to save our first function we can simply use the following syntax:
-
---
-
-
-```r
-R&gt; usethis::use_r("sq")
-```
-
----
-
-# Relevant commands: _use_r()_
-
-Where do we want to define our function?
-
-- We want to save it in an `.R` file in our `R/` subdirectory folder of our package (we saw this above already).
-
+- Aim: save it as `.R` file in our `R/` subdirectory folder
 
 - For beginners it is recommended to create a new `.R` file for each function of our package and name the file similar to the function.
 
 - More advanced user begin to group related functions together. 
 
-- In order to save our first function we can simply use the following syntax:
+In order to save our first function we can simply use the following syntax:
+
 
 
 ```r
 R&gt; usethis::use_r("sq")
 ```
-
-
-- Note: After executing the `use_r()` command we can use our function although it is **not defined in our global environment**. 
-
---
 
 - Also, make sure to put **only** the definition of our new function (in this case `sq()`) into the `R/sq.R` file and save it. Otherwise we run into problems.
+]
 
+.pull-right[&lt;br&gt;
+&lt;img src="creating-packages-slides_files/02-skeleton-R.png" height=330&gt;]
 ---
 
 # Relevant commands: _load_all()_
@@ -276,13 +237,15 @@ R&gt; usethis::use_r("sq")
 
 --
 
-- After _loading_ the package it is recommended to confirm that the minimal function is working. Just try it out!
+- After _loading_ the package it is recommended to confirm that the minimal function is working. *Just try it out*
 
 ---
 
 # Relevant commands: _check()_
 
-How can we ensure that our example function `sq()` works? `devtools::check()` offers an easy solution for that. It automatically checks the package using all known best practices.
+How can we ensure that our example function `sq()` works? 
+
+- `devtools::check()` offers an easy solution for that. It automatically checks the package using all known best practices.
 
 --
 
@@ -293,13 +256,13 @@ R&gt; devtools::check()
 
 --
 
-After running a lot of checks the `check`&lt;sup&gt;1&lt;/sup&gt; function finally gives us a summary that tells us how many errors, warnings or notes are returned.
+After running a lot of checks the `check()` function finally gives us a summary that tells us how many errors, warnings or notes are returned.
 
-.footnote[&lt;sup&gt;1&lt;/sup&gt; **Good practice:** It's important to run this frequently, as you would rather have small moments of friction to fix, rather than doing it much later and having an overwhelming amount of changes to make.]
+- **Good practice:** It's important to run this frequently, as you would rather have small moments of friction to fix, rather than doing it much later and having an overwhelming amount of changes to make.
 
 
 ---
-# Relevant commands: _use_mit_license()_
+&lt;!---# Relevant commands: _use_mit_license()_
 
 After the first `check()` we would at least get one warning: the **license is missing**.
 
@@ -309,36 +272,32 @@ In our example we will go for the `use_mit_license()`. But if you're interested 
 
 &gt; [Pick a License, Any License by Jeff Atwood](https://blog.codinghorror.com/pick-a-license-any-license/)
 
----
+--- ---&gt;
 
 
 &lt;!--### Edit description Shall I do this?  --- --&gt;
 
 # Relevant commands: _document()_
 
-- A big advantage of packages and the functions that come along is the possibility to call the help `?` function.
+.pull-left[
+- A big advantage of packages is possibility to call the for help `?`.
 
-- Let's add useful documentation around our package and our function `sq()` in order to make useful help. 
-
-- For doing so, we need a special R documentation file: `man/sq.Rd`&lt;sup&gt;2&lt;/sup&gt;.
-
-.footnote[&lt;sup&gt;2&lt;/sup&gt; Note: man stands for manual.]
-
---
+- For doing so, we need a special R documentation file: `man/sq.Rd`&lt;sup&gt;1&lt;/sup&gt;.
 
 - For adding our documentation to the package we open `R/sq.R` and we add a template to our defined function which includes _special_ comments. We can do so via: 
 
 &gt; **Code &gt; Insert roxygen skeleton**
 
---
-
-- After adding relevant information, such as the type of input the function accepts or a minimal working example we need to update our package so that it includes our specified roxygen comments. We can do so using:
+- After adding relevant information, such as a minimal working example we need to update our package so that it includes our specified roxygen comments. We can do so using:
 
 
 ```r
 R&gt; devtools::document()
 ```
+]
 
+.pull-right[&lt;br&gt;
+&lt;img src="creating-packages-slides_files/03-skeleton-man-namespace.png" height=330&gt;]
 ---
 
 class: inverse, center, middle
