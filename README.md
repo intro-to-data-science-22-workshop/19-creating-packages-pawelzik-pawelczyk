@@ -7,11 +7,11 @@ This repository provides materials for a session that is part of the [I2DS Tools
 
 ### Session contents
 
-This session will introduce you to the state of the art way to write your own packages in R. Yes, this is very cool. Writing packages (stopped here FP) is one of the core steps in the data science workflow. dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges, including the manipulation of datasets and variables. 
+This session will introduce you to the state of the art way to write your own packages in R. Yes, this is very cool. Writing packages is a way to save massive amounts of time. In this session we will make plausible why it makes sense to write own packages and optionally share them with others. In addition, we will show you how to use ´devtools´ and the ´usethis´ package in order to develop packages easily. Finally, we will go with you trough the whole process of developing a tiny example package in R.
 
 ### Main learning objectives
 
-The goals of this session are to (1) equip you with conceptual knowledge about the dplyr package and data wrangling workflow, (2) show you the three key verbs of the pacakge, and (3) provide you with practice material as well as some further readings.
+The goals of this session are to (1) equip you with knowledge why it makes sense to write packages, (2) show you key functions of devtools and usethis in order to write small packages easily (3) and provide you with practice material as well as some further readings.
 
 
 ## Instructors
