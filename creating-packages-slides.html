@@ -49,13 +49,12 @@ class: center, middle, inverse, title-slide
 &lt;br&gt;
 
 
-1. [Packages and Functions](#packages)
+1. [Motivation: Packages and Functions](#packages)
 
-2. [Iteration](#commands)
+2. [Anatomy and Tools for crafting packages](#tools)
 
-3. [Strategies for debugging](#debugging)
+3. ['The Whole Game'](#game)
 
-4. [Debugging R](#debuggingr)
 
 
 
@@ -89,11 +88,11 @@ Put it very simple: packages are a bundle of **functions**. However, they offer 
 
 --
 
-We will now learn the basics of creating our own packages with R. But we need to check some boxes first:
+We will now learn the basics of creating our own packages with R. We will go along the following outline:
 
 - What was a function again?
-- Why do I need packages?
-- How do I build packages
+- Why do we need packages?
+- **How do we build packages?**
 
 
 ---
@@ -105,8 +104,6 @@ Why functions? Because they have the potential to save enormous amount of time a
 - **ARGUMENTS** to the function that controlling the output of a function
 - **BODY** that represents all the code used inside
 - **return value**: what should the function return?
-
---
 
 
 ```r
@@ -137,24 +134,30 @@ R&gt; sq &lt;- function(x) {
 
 ### Why creating packages?
 
-People usually build packages to save time. For instance, some institutions have a corporate identity, so they always use charts in specific colours and often make use of their logo somewhere --&gt; this could also be part of a package.
+People usually build packages to **save time**. For instance, some institutions have a _corporate identity_, so they always use charts in _specific colours_ and often make use of their _logo_ somewhere. All those things could also be part of a package.
 
-In general arguments very analogue to the ones for using functions: Let's assume you want to get the clean text data from parliamentary speeches to run a NLP model -&gt; Instead of applying multiple steps on each document, e.g. downloading the stenographic reports, rename the documents manually and retrieve the relevant text data from pdf -&gt; we build a function that runs all these steps on each document automatically and outputs us a clean data frame with all relevant variables such as text, speaker etc. -&gt; Easy to see the advantage of the function timewise.
+In general, the pro-arguments are very analogue to the ones for using functions but:
 
---
+- We can to **reuse** the functions
 
-Two weeks later we want to run a similar task on parliamentary speeches from another country... It would be obvious to reuse functions from last time and/or adjust some of the functions we already used. We should write a package!
+- **Share workflows** and empower yourself AND others (descriptions becoming crucial here!)
 
---
+- Packages make your work easier, faster and more reproducible. R packages let you share these functions or reuse them another time 
 
-Recap: you write packages in order to... 
+&lt;!--: Let's assume you want to get the clean text data from parliamentary speeches to run a NLP model. Instead of applying multiple steps on each document, e.g. downloading the stenographic reports, rename the documents manually and retrieve the relevant text data from pdf we build a function that runs all these steps on each document automatically and outputs us a clean data frame with all relevant variables such as text, speaker etc. Easy to see the advantage of the function timewise. --&gt;
 
--  Don't repeat yourself and be more efficient
+&lt;!-- Two weeks later we want to run a **similar task** on parliamentary speeches from another country... It would be obvious to **reuse functions** from last time and/or **adjust some of the functions** we already used. We should write a package! --&gt;
 
-- share workflows and empower yourself AND others
+---
+class: inverse, center, middle
+name: tools
 
-- functions make your work easier, faster and more reproducible. R packages let you share these functions or reuse them another time
+# tools
 
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+
+
+---
 ---
 
 # Creating packages
@@ -269,8 +272,7 @@ After running a lot of checks the `check`&lt;sup&gt;1&lt;/sup&gt; function gives
 
 
 ---
-
-### License: _use_mit_license()_
+# Relevant commands: _use_mit_license()_
 
 After the first `check()` we would at least get one warning: the **license is missing**.
 
@@ -303,16 +305,10 @@ After inserting all the documentation we want to specify we need to save this ro
 
 Do we want to add the specifications of the roxygen skeleton such as title, description etc?
 
-
-
-
-
-
-
-
-
-
 ---
+
+class: inverse, center, middle
+name: game
 
 # Basic syntax
 
