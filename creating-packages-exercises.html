@@ -13,7 +13,7 @@
 
 <title>Creating R Packages in RStudio</title>
 
-<script src="creating-packages-exercises_files/header-attrs-2.13/header-attrs.js"></script>
+<script src="creating-packages-exercises_files/header-attrs-2.16/header-attrs.js"></script>
 <script src="creating-packages-exercises_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="creating-packages-exercises_files/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
@@ -127,13 +127,20 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -349,8 +356,8 @@ Once your package template is created, go ahead and explore it!</p>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     Set Name, Set Sub-directory</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## insert GIF of path to Package Creation</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## insert GIF or Screenshot of Package Anatomy/structure </span></span></code></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## INSERT: GIF of path to Package Creation</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## INSERT: GIF or Screenshot of Package Anatomy/structure </span></span></code></pre></div>
 <p>For the purpose of greater clarity within this tutorial, we will
 always indicate the package we take a function from. In general,
 creating a package in R in the way suggested by this workshop relies on

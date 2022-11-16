@@ -35,8 +35,8 @@ Once your package template is created, go ahead and explore it!
 #     Set Name, Set Sub-directory
 
 
-## insert GIF of path to Package Creation
-## insert GIF or Screenshot of Package Anatomy/structure 
+## INSERT: GIF of path to Package Creation
+## INSERT: GIF or Screenshot of Package Anatomy/structure 
 ```
 
 For the purpose of greater clarity within this tutorial, we will always indicate the package we take a function from. In general, creating a package in R in the way suggested by this workshop relies on two packages you should install on your local machine:
