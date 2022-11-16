@@ -22,9 +22,9 @@ The goals of this session are to (1) equip you with conceptual knowledge about t
 
 ## Further resources
 
-- [dplyr overview at dplyr.tidyverse.org](https://dplyr.tidyverse.org/)
-- [Hands-on dplyr tutorial by Data School on YouTube](https://www.youtube.com/watch?v=jWjqLW-u3hc)
+- [How to write your own R package and publish it on CRAN](https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/r-package/)
 - [R packages book](https://r-pkgs.org/introduction.html)
+- [Building R packages with devtools and usethis](https://www.youtube.com/watch?v=EpTkT6Rkgbs)
 
 
 ## License
@@ -33,6 +33,6 @@ The material in this repository is made available under the [MIT license](http:/
 
 ## Statement of contributions
 
-**Simon Munzert** prepared the practice material and post-processed the recording.
+**Niklas Pawelzik** was mainly responsible for the practice material.
 
-**Kermit the Frog** prepared the presentation slides and recording. He also provided an example to the practice material.
+**Fabian Pawelczyk** was mainly responsible for the presentation slides.
