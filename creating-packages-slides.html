@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Creating packages</title>
+    <title>Crafting Packages</title>
     <meta charset="utf-8" />
     <meta name="author" content="Niklas Pawelzik and Fabian Pawelczyk" />
     <script src="libs/header-attrs/header-attrs.js"></script>
@@ -15,7 +15,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Creating packages
+# Crafting Packages
 ]
 .subtitle[
 ## using devtools and usethis
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### <a href="https://github.com/intro-to-data-science-22-workshop/19-creating-packages-pawelzik-pawelczyk">Hertie School MDS cohort 2024</a>
 ]
 .date[
-### 2022/11/15(updated: 2022-11-16)
+### 2022/11/15 (updated: 2022-11-16)
 ]
 
 ---
@@ -157,6 +157,7 @@ Recap: you write packages in order to...
 
 ---
 
+# Creating packages
 ### The anatomy of a package
 
 * **Metadata** via the `DESCRIPTION`, including the name of the package, description of the package, the version of the package, and any package dependencies  
@@ -231,7 +232,7 @@ R&gt; usethis::use_r("sq")
 ```
 
 
-Note: After executing the use_r() command we can use our function although it is not defined in our global environment. We already get some package-vibes here, right? 
+Note: After executing the `use_r()` command we can use our function although it is not defined in our global environment. We already get some package-vibes here, right? 
 Also, put **only** the definition of our new function (in this case`sq()`) into the `R/sq.R` file and save it. Otherwise one can easily run into problems.
 
 ---
@@ -262,34 +263,50 @@ R&gt; devtools::check()
 
 --
 
-After running a lot of checks we get a summary at the end that tells us how many errors, warnings or notes are returned.
+After running a lot of checks the `check`&lt;sup&gt;1&lt;/sup&gt; function gives us a summary at the end that tells us how many errors, warnings or notes are returned.
 
---
-
-**Good practice:** It's important to run this frequently, as you would rather have small moments of friction to fix, rather than doing it much later and having an overwhelming amount of changes to make.
+.footnote[&lt;sup&gt;1&lt;/sup&gt; **Good practice:** It's important to run this frequently, as you would rather have small moments of friction to fix, rather than doing it much later and having an overwhelming amount of changes to make.]
 
 
-
-
+---
 
 ### License: _use_mit_license()_
 
 After the first `check()` we would at least get one warning: the **license is missing**.
 
-Since software licensing is a rather complicated field because it lies at the intersection between programming and law, we will simplify this part. The license we give basically indicates how authors want their code to be treated.
+Since software licensing is a rather complicated field because it lies at the intersection between programming and law, we will simplify this part. The license we give indicates how authors want their code to be treated.
 
-In our example we will go for the `use_mit_license()`. But if you're interested in this topic you can read more here:
+In our example we will go for the `use_mit_license()`. But if you're interested in this topic we will link you a good resource and you can read more about it:
 
 &gt; [Pick a License, Any License by Jeff Atwood](https://blog.codinghorror.com/pick-a-license-any-license/)
+
+---
 
 
 ### Edit description
 
-Whall I do this?
+Shall I do this?
+
+---
 
 ### Relevant commands: _document()_
 
-A big advantage of packages is the possibility to call the help `?` function. Let's add useful document around our package and our function `sq()`. For doing so, we need a special R documentation file, `man/sq.Rd` (why man??).
+A big advantage of packages and the functions that come along is the possibility to call the help `?` function. Let's add useful documentation around our package and our function `sq()`. For doing so, we need a special R documentation file, `man/sq.Rd`&lt;sup&gt;2&lt;/sup&gt;.
+
+.footnote[&lt;sup&gt;2&lt;/sup&gt; Note: man stands for manual.]
+
+For adding our documentation to the package we open `R/sq.R` in the source editor and we put our cursor somewhere in the `sq.R` function definition. We than can click in RStudio _Code &gt; Insert roxygen skeleton_. This will add special comments (a template) that begins each line with `#'`. Now we can easily type in the relevant description of our function `sq`.
+
+After inserting all the documentation we want to specify we need to save this roxygen comments into `man/sq.Rd`. We can do so using `devtools::document()`.
+
+--
+
+Do we want to add the specifications of the roxygen skeleton such as title, description etc?
+
+
+
+
+
 
 
 
