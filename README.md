@@ -16,7 +16,7 @@ The goals of this session are to (1) equip you with conceptual knowledge about t
 
 ## Instructors
 
-- Fabian Pawelczyk ([website](http://fpawelczyk.github.io/), [twitter](https://twitter.com/PawelczykFabian))
+- Fabian Pawelczyk ([website](https://github.com/fpawelczyk), [twitter](https://twitter.com/PawelczykFabian))
 - Niklas Pawelzik ([website](https://github.com/nikpaw))
 
 
