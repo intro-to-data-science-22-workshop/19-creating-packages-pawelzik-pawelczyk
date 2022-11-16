@@ -56,7 +56,7 @@ Once our package template is created, go ahead and explore it!
 
 ![Create a package template in Rstudio](https://raw.githubusercontent.com/jthomasmock/pkg-building/master/images/rstudio-create-pkg.gif)
 
-![Screenshot of Package Anatomy Template](https://raw.githubusercontent.com/jthomasmock/pkg-building/master/images/rstudio-create-pkg.gif)
+![Screenshot of Package Anatomy Template](creating-packages-exercises_files/Screenshot_Anatomy.png)
 
 ## 2. Add a function to your package
 
@@ -88,6 +88,9 @@ basic_summary <- function(x){
 ## 3. Update your package structure
 
 Connect our function with the rest of our package structure, click on `Code`,then on `Insert Roxygen Skeleton`.
+
+![Screenshot of Insert Roxygen Skeleton](creating-packages-exercises_files/Screenshot_Insert_Roxygen_Skeleton.png)
+
 Correctly filled out, the `ROXYGEN` comments allow our helper functions to update information stored in namespace and man (manual).
 (Note: In order to take full advantage of `ROXYGEN` support, we delete the pre-existing `NAMESPACE`-file.)
 
@@ -113,6 +116,10 @@ Correctly filled out, the `ROXYGEN` comments allow our helper functions to updat
 #' @export basic_summary
 ```
 
+![Screenshot of Namespace Delete](creating-packages-exercises_files/Screenshot_Delete_Namespace.png)
+
+![Screenshot of Function with Roxygen](creating-packages-exercises_files/Screenshot_Function_with_Roxygen.png)
+
 Next, you can implement these `ROXYGEN` inputs into our package structure!
 
 ```{r}
@@ -122,7 +129,7 @@ Next, you can implement these `ROXYGEN` inputs into our package structure!
 Make sure our file is correctly saved and stored in our package´s `R`-folder!
 
 ```{r}
-### insert GIF of going to R-folder and seeing package created called basic_summary.R
+### insert GIF of going to R-folder and seeing file created called basic_summary.R
 ```
 
 Congrats, you created your first function within your own R-Package!
@@ -158,7 +165,6 @@ Can you check and correct the issues?
 Once we solved the problems, check re-load and check your package again.
 
 ```{r}
-### INSERT: Screenshot of warnings
 ## take care of license issue:
 #"usethis::use_mit_license()"
 ## depending on whether we deleted the "hello_world" function, we might get an error message
@@ -166,12 +172,9 @@ Once we solved the problems, check re-load and check your package again.
 # devtools::check()
 ```
 
-Install and load our package, then test it with the height variable from the star_wars data set!
+![Screenshot of Check Output without Errors and Warnings](creating-packages-exercises_files/Screenshot_Check.png)
 
-```{r}
-### INSERT:  starwars data set coding chunks
-# devtools::install() 
-```
+Install and load our package, then test it with the height variable from the star_wars data set!
 
 ### Bonus Question 1: load_all()
 
@@ -186,23 +189,18 @@ Can you spot a difference from using load_all() for the functions in our package
 Any idea why we asked you to test our package on the height variable instead of the species variable?
 
 ```{r}
-### CONFIRM: Our function can only deal with numeric input, not with strings. Different input will probably result in an error.
-# This is where we would specify input problems or limitations of our function with test() functions to ease the pain during future use of our packages! 
+## Our function can only deal with numeric input, not with strings. Different input will probably result in an error.
+## This is where we would specify input problems or limitations of our function with test() functions to ease the pain during future use of our packages! 
 ```
 
 ### Bonus Task 1: Help with functions
 
 Ask `RStudio` for help on our function!
 
-```{r}
-# ?basic_summary
-# GIF/screenshot?
-```
+![Screenshot of Help Function basic_summary](creating-packages-exercises_files/Screenshot_Help.png)
 
 ### Bonus Task 2: Github Repository
 
 Load our package into your Github Repository!
 
-```{r}
-# GIF/screenshot?
-```
+
