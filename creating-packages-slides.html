@@ -190,6 +190,7 @@ Recap: you write packages in order to...
 * [`devtools`](https://devtools.r-lib.org/):  
 
 &gt; The aim of devtools is to make package development easier by providing R functions that simplify and expedite common tasks.
+
 --
 
 * [`usethis`](https://usethis.r-lib.org/)  
@@ -229,36 +230,68 @@ Where do we want to define our function? We want to save it in an `.R` file in o
 R&gt; usethis::use_r("sq")
 ```
 
-```
-   v Setting active project to 'C:/Users/fpawe/OneDrive - Hertie School/hertie_study/intro_data_science/19-creating-packages-pawelzik-pawelczyk'
-   * Edit 'R/sq.R'
-   * Call `use_test()` to create a matching test file
-```
-
 
 Note: After executing the use_r() command we can use our function although it is not defined in our global environment. We already get some package-vibes here, right? 
 Also, put **only** the definition of our new function (in this case`sq()`) into the `R/sq.R` file and save it. Otherwise one can easily run into problems.
 
 ---
-# Relevant commands: _use_r()_
 
+# Relevant commands: _load_all()_
+
+In order to experiment with our created package we can use `devtools::load_all()`.
+
+--
+
+To keep it simple: `devtools::load_all()` loads our package. It roughly simulates what happens when a package is installed and loaded with `library()`. `load_all()` will make our function available, although it does not appear in our global environment.
+
+--
+
+After loading the package it is recommended to confirm that the minimal function is working.
 
 
 # Relevant commands: _check()_
 
-How can we ensure that our example function `sq()` works?... do this part later
+How can we ensure that our example function `sq()` works? `devtools::check()` offers an easy solution for that. It automatically checks the package using all known best practices.
+
+--
 
 
 ```r
 R&gt; devtools::check()
 ```
-Why does this not work
 
 --
 
+After running a lot of checks we get a summary at the end that tells us how many errors, warnings or notes are returned.
+
+--
+
+**Good practice:** It's important to run this frequently, as you would rather have small moments of friction to fix, rather than doing it much later and having an overwhelming amount of changes to make.
 
 
-###
+
+
+
+### License: _use_mit_license()_
+
+After the first `check()` we would at least get one warning: the **license is missing**.
+
+Since software licensing is a rather complicated field because it lies at the intersection between programming and law, we will simplify this part. The license we give basically indicates how authors want their code to be treated.
+
+In our example we will go for the `use_mit_license()`. But if you're interested in this topic you can read more here:
+
+&gt; [Pick a License, Any License by Jeff Atwood](https://blog.codinghorror.com/pick-a-license-any-license/)
+
+
+### Edit description
+
+Whall I do this?
+
+### Relevant commands: _document()_
+
+A big advantage of packages is the possibility to call the help `?` function. Let's add useful document around our package and our function `sq()`. For doing so, we need a special R documentation file, `man/sq.Rd` (why man??).
+
+
 
 
 
