@@ -1,12 +1,18 @@
 ---
 title: "Creating R Packages"
-author: "Fabian Pawelczyk and Niklas Pawelzik"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Vignette Title}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+subtitle: "Fabian Pawelczyk and Niklas Pawelzik"
+output: 
+  html_document:
+    toc: TRUE
+    df_print: paged
+    number_sections: FALSE
+    highlight: tango
+    theme: lumen
+    toc_depth: 3
+    toc_float: true
+    css: custom.css 
+    self_contained: false
+
 ---
 
 ```{r setup, include=FALSE}
