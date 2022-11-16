@@ -202,5 +202,3 @@ Ask `RStudio` for help on our function!
 ### Bonus Task 2: Github Repository
 
 Load our package into your Github Repository!
-
-
