@@ -11,15 +11,15 @@
 
 
 
-<title>Creating R Packages in RStudio</title>
+<title>Creating R Packages in RStudio - No Solutions</title>
 
-<script src="creating-packages-exercises_files/header-attrs-2.16/header-attrs.js"></script>
-<script src="creating-packages-exercises_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="creating-packages-exercises-no-solutions_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="creating-packages-exercises-no-solutions_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="creating-packages-exercises_files/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
-<script src="creating-packages-exercises_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="creating-packages-exercises_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="creating-packages-exercises_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<link href="creating-packages-exercises-no-solutions_files/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="creating-packages-exercises-no-solutions_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="creating-packages-exercises-no-solutions_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="creating-packages-exercises-no-solutions_files/bootstrap-3.3.5/shim/respond.min.js"></script>
 <style>h1 {font-size: 34px;}
        h1.title {font-size: 38px;}
        h2 {font-size: 30px;}
@@ -29,12 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="creating-packages-exercises_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="creating-packages-exercises_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="creating-packages-exercises_files/tocify-1.9.1/jquery.tocify.js"></script>
-<script src="creating-packages-exercises_files/navigation-1.1/tabsets.js"></script>
-<link href="creating-packages-exercises_files/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
-<script src="creating-packages-exercises_files/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="creating-packages-exercises-no-solutions_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="creating-packages-exercises-no-solutions_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="creating-packages-exercises-no-solutions_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="creating-packages-exercises-no-solutions_files/navigation-1.1/tabsets.js"></script>
+<link href="creating-packages-exercises-no-solutions_files/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="creating-packages-exercises-no-solutions_files/pagedtable-1.1/js/pagedtable.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -335,7 +335,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Creating R Packages in RStudio</h1>
+<h1 class="title toc-ignore">Creating R Packages in RStudio - No
+Solutions</h1>
 <h3 class="subtitle">Workshop by Fabian Pawelczyk and Niklas
 Pawelzik</h3>
 
@@ -350,10 +351,6 @@ package in R in the way suggested by this workshop relies on two
 packages you should install on your local machine: <code>devtools</code>
 and <code>usethis</code>. Ensure that these two packages are installed
 on your machine!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## check whether the packages are already installed on your machine:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># installed.packages()</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## if necessary, install the packages on your machine:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(c(&quot;devtools&quot;, &quot;usethis&quot;))</span></span></code></pre></div>
 <p>Please note that creating a package will require to open a new
 <code>Project</code>. We can therefore not provide a markdown sheet that
 allows you to run the code chunks in the exercise sheet. In the
@@ -366,95 +363,47 @@ explanatory comments are tagged with ##.</p>
 <h2>1. Open a template package</h2>
 <p>Create a New Project for our package in <code>RStudio</code>.</p>
 <p>Once our package template is created, go ahead and explore it!</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## In order to create a package, perform the following steps:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">##    &quot;File&quot;, &quot;New Project&quot;, &quot;New Directory&quot;, &quot;R-Package&quot;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">##     Set Name, Set Sub-directory</span></span></code></pre></div>
-<div class="figure">
-<img
-src="https://raw.githubusercontent.com/jthomasmock/pkg-building/master/images/rstudio-create-pkg.gif"
-alt="" />
-<p class="caption">Create a package template in Rstudio</p>
-</div>
-<div class="figure">
-<img src="creating-packages-exercises_files/Screenshot_Anatomy.png"
-alt="" />
-<p class="caption">Screenshot of Package Anatomy Template</p>
-</div>
 </div>
 <div id="add-a-function-to-your-package" class="section level2">
 <h2>2. Add a function to your package</h2>
 <p>Create new function “basic_summary” in the package we created!</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># usethis::use_r(&quot;basic_summary&quot;)</span></span></code></pre></div>
 <p>Insert the following function into the newly created <code>.R</code>
 file:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## function that returns:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. box plot and histogram of the distribution of the input</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>basic_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mrow=</span><span class="fu">c</span> (<span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">boxplot</span>(x)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mrow=</span><span class="fu">c</span> (<span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## 2. a data frame with a basic statistical description of the input</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(x),</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(x),</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">med =</span> <span class="fu">median</span>(x),</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(x)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## function that returns:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. box plot and histogram of the distribution of the input</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>basic_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mrow=</span><span class="fu">c</span> (<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">boxplot</span>(x)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mrow=</span><span class="fu">c</span> (<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## 2. a data frame with a basic statistical description of the input</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(x),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(x),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">med =</span> <span class="fu">median</span>(x),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(x)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="update-your-package-structure" class="section level2">
 <h2>3. Update your package structure</h2>
 <p>Connect our function with the rest of our package structure, click on
 <code>Code</code>,then on <code>Insert Roxygen Skeleton</code>.</p>
-<div class="figure">
-<img
-src="creating-packages-exercises_files/Screenshot_Insert_Roxygen_Skeleton.png"
-alt="" />
-<p class="caption">Screenshot of Insert Roxygen Skeleton</p>
-</div>
 <p>Correctly filled out, the <code>ROXYGEN</code> comments allow our
 helper functions to update information stored in namespace and man
 (manual). (Note: In order to take full advantage of <code>ROXYGEN</code>
 support, we delete the pre-existing <code>NAMESPACE</code>-file.)</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Cheat-Sheet ROXYGEN Attributes:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">## use &quot;Code&quot;, &quot;Insert Roxygen Skeleton&quot;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Title of the function w/ @title</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Description of the function purpose with @description</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Documenting the function arguments/parameters with @param</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Specifying it for export with @export</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="do">## If it requires external packages, reference the package or specific package functions with @import and @importFrom</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="do">## What does the function return with @return</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## delete pre-existing &quot;NAMESPACE&quot;-file</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Fill the ROXYGEN template in the following (very basic) way:</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; basic_summary</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x A numeric vector</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @description Purpose of the function: Grasp unfamiliar numeric data sets</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return a first summary of statistic description of a numeric vector</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export basic_summary</span></span></code></pre></div>
-<div class="figure">
-<img
-src="creating-packages-exercises_files/Screenshot_Delete_Namespace.png"
-alt="" />
-<p class="caption">Screenshot of Namespace Delete</p>
-</div>
-<div class="figure">
-<img
-src="creating-packages-exercises_files/Screenshot_Function_with_Roxygen.png"
-alt="" />
-<p class="caption">Screenshot of Function with Roxygen</p>
-</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Cheat-Sheet ROXYGEN Attributes:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">## use &quot;Code&quot;, &quot;Insert Roxygen Skeleton&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Title of the function w/ @title</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Description of the function purpose with @description</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Documenting the function arguments/parameters with @param</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Specifying it for export with @export</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="do">## If it requires external packages, reference the package or specific package functions with @import and @importFrom</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="do">## What does the function return with @return</span></span></code></pre></div>
 <p>Next, you can implement these <code>ROXYGEN</code> inputs into our
 package structure!</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::document()</span></span></code></pre></div>
 <p>Make sure our file is correctly saved and stored in our package´s
 <code>R</code>-folder!</p>
-<div class="figure">
-<img
-src="creating-packages-exercises_files/Screenshot_R_Files_hello_file.png"
-alt="" />
-<p class="caption">Screenshot of R-Folder with .R-file basic_summary</p>
-</div>
 <p>Congrats, you created your first function within your own
 R-Package!</p>
 </div>
@@ -462,9 +411,6 @@ R-Package!</p>
 <h2>4. Check your work</h2>
 <p>Next, let´s make extra sure this worked as intended by clearing your
 environment and (re-)loading all functions from your package.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## When it comes to interacting with the functions in our package, let´s establish good habits early on.</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Please start by clearing objects from your environment and use the following code load them again:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::load_all()</span></span></code></pre></div>
 <p>Once we loaded all functions from our package again, we are ready to
 actually test them.</p>
 <p>For this, again we want to establish good practices from day one
@@ -475,18 +421,13 @@ package testing code.</p>
 <code>usethis::use_testthat()</code>) that ensure our function works in
 the specific way we intended. Given the limited time we have at our
 hands, we cannot cover this part in this workshop unfortunately)</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::check()</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Note: This checks only for a standardized set of formal errors</span></span></code></pre></div>
 <p>Have you received warning or error messages? Don´t worry, that is
 completely normal - at any stage of our package creation workflow and in
 fact especially at this stage. What matters is: Do you understand the
 output your machine provides? Can you check and correct the issues? Once
 we solved the problems, check re-load and check your package again.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## take care of license issue:</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&quot;usethis::use_mit_license()&quot;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="do">## depending on whether we deleted the &quot;hello_world&quot; function, we might get an error message</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="do">## rerun the check:</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::check()</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## take care of license issue:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># usethis::use_mit_license()</span></span></code></pre></div>
 <div class="figure">
 <img src="creating-packages-exercises_files/Screenshot_Check.png"
 alt="" />
@@ -499,23 +440,15 @@ from the star_wars data set!</p>
 <h3>Bonus Question 1: load_all()</h3>
 <p>Can you spot a difference from using load_all() for the functions in
 our package and creating a function in a regular R-Studio session?</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ANSWER: The loaded functions from &quot;load_all()&quot; do not appear in the global environment </span></span></code></pre></div>
 </div>
 <div id="bonus-question-2-function-workability" class="section level3">
 <h3>Bonus Question 2: Function Workability</h3>
 <p>Any idea why we asked you to test our package on the height variable
 instead of the species variable?</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Our function can only deal with numeric input, not with strings. Different input will probably result in an error.</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="do">## This is where we would specify input problems or limitations of our function with test() functions to ease the pain during future use of our packages! </span></span></code></pre></div>
 </div>
 <div id="bonus-task-1-help-with-functions" class="section level3">
 <h3>Bonus Task 1: Help with functions</h3>
 <p>Ask <code>RStudio</code> for help on our function!</p>
-<div class="figure">
-<img src="creating-packages-exercises_files/Screenshot_Help.png"
-alt="" />
-<p class="caption">Screenshot of Help Function basic_summary</p>
-</div>
 </div>
 <div id="bonus-task-2-github-repository" class="section level3">
 <h3>Bonus Task 2: Github Repository</h3>

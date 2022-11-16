@@ -128,10 +128,6 @@ Next, you can implement these `ROXYGEN` inputs into our package structure!
 
 Make sure our file is correctly saved and stored in our package´s `R`-folder!
 
-```{r}
-### insert GIF of going to R-folder and seeing file created called basic_summary.R
-```
-
 ![Screenshot of R-Folder with .R-file basic_summary](creating-packages-exercises_files/Screenshot_R_Files_hello_file.png)
 
 Congrats, you created your first function within your own R-Package!

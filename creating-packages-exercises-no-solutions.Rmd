@@ -30,7 +30,6 @@ In general, creating a package in R in the way suggested by this workshop relies
 Ensure that these two packages are installed on your machine!
 
 
-
 Please note that creating a package will require to open a new `Project`.
 We can therefore not provide a markdown sheet that allows you to run the code chunks in the exercise sheet.
 In the solutions included, the required code snippets are therefore included as comments (only exception is the basic function we provide below).
@@ -42,24 +41,10 @@ Create a New Project for our package in `RStudio`.
 
 Once our package template is created, go ahead and explore it!
 
-```{r}
-## In order to create a package, perform the following steps:
-##    "File", "New Project", "New Directory", "R-Package"
-##     Set Name, Set Sub-directory
-
-```
-
-![Create a package template in Rstudio](https://raw.githubusercontent.com/jthomasmock/pkg-building/master/images/rstudio-create-pkg.gif)
-
-![Screenshot of Package Anatomy Template](creating-packages-exercises_files/Screenshot_Anatomy.png)
 
 ## 2. Add a function to your package
 
 Create new function "basic_summary" in the package we created!
-
-```{r}
-# usethis::use_r("basic_summary")
-```
 
 Insert the following function into the newly created `.R` file:
 
@@ -84,8 +69,6 @@ basic_summary <- function(x){
 
 Connect our function with the rest of our package structure, click on `Code`,then on `Insert Roxygen Skeleton`.
 
-![Screenshot of Insert Roxygen Skeleton](creating-packages-exercises_files/Screenshot_Insert_Roxygen_Skeleton.png)
-
 Correctly filled out, the `ROXYGEN` comments allow our helper functions to update information stored in namespace and man (manual).
 (Note: In order to take full advantage of `ROXYGEN` support, we delete the pre-existing `NAMESPACE`-file.)
 
@@ -100,46 +83,15 @@ Correctly filled out, the `ROXYGEN` comments allow our helper functions to updat
 ## What does the function return with @return
 ```
 
-```{r}
-## delete pre-existing "NAMESPACE"-file
-
-## Fill the ROXYGEN template in the following (very basic) way:
-#' basic_summary
-#' @param x A numeric vector
-#' @description Purpose of the function: Grasp unfamiliar numeric data sets
-#' @return a first summary of statistic description of a numeric vector
-#' @export basic_summary
-```
-
-![Screenshot of Namespace Delete](creating-packages-exercises_files/Screenshot_Delete_Namespace.png)
-
-![Screenshot of Function with Roxygen](creating-packages-exercises_files/Screenshot_Function_with_Roxygen.png)
-
 Next, you can implement these `ROXYGEN` inputs into our package structure!
 
-```{r}
-# devtools::document()
-```
-
 Make sure our file is correctly saved and stored in our package´s `R`-folder!
-
-```{r}
-### insert GIF of going to R-folder and seeing file created called basic_summary.R
-```
-
-![Screenshot of R-Folder with .R-file basic_summary](creating-packages-exercises_files/Screenshot_R_Files_hello_file.png)
 
 Congrats, you created your first function within your own R-Package!
 
 ## 4. Check your work
 
 Next, let´s make extra sure this worked as intended by clearing your environment and (re-)loading all functions from your package.
-
-```{r}
-## When it comes to interacting with the functions in our package, let´s establish good habits early on.
-## Please start by clearing objects from your environment and use the following code load them again:
-# devtools::load_all()
-```
 
 Once we loaded all functions from our package again, we are ready to actually test them.
 
@@ -150,11 +102,6 @@ Please make sure to have a complete formal check performed by using package test
 (Note: Usually, we will want to add further tests (using `usethis::use_testthat()`) that ensure our function works in the specific way we intended.
 Given the limited time we have at our hands, we cannot cover this part in this workshop unfortunately)
 
-```{r}
-# devtools::check()
-## Note: This checks only for a standardized set of formal errors
-```
-
 Have you received warning or error messages?
 Don´t worry, that is completely normal - at any stage of our package creation workflow and in fact especially at this stage.
 What matters is: Do you understand the output your machine provides?
@@ -163,10 +110,7 @@ Once we solved the problems, check re-load and check your package again.
 
 ```{r}
 ## take care of license issue:
-#"usethis::use_mit_license()"
-## depending on whether we deleted the "hello_world" function, we might get an error message
-## rerun the check:
-# devtools::check()
+# usethis::use_mit_license()
 ```
 
 ![Screenshot of Check Output without Errors and Warnings](creating-packages-exercises_files/Screenshot_Check.png)
@@ -177,24 +121,13 @@ Install and load our package, then test it with the height variable from the sta
 
 Can you spot a difference from using load_all() for the functions in our package and creating a function in a regular R-Studio session?
 
-```{r}
-## ANSWER: The loaded functions from "load_all()" do not appear in the global environment 
-```
-
 ### Bonus Question 2: Function Workability
 
 Any idea why we asked you to test our package on the height variable instead of the species variable?
 
-```{r}
-## Our function can only deal with numeric input, not with strings. Different input will probably result in an error.
-## This is where we would specify input problems or limitations of our function with test() functions to ease the pain during future use of our packages! 
-```
-
 ### Bonus Task 1: Help with functions
 
 Ask `RStudio` for help on our function!
-
-![Screenshot of Help Function basic_summary](creating-packages-exercises_files/Screenshot_Help.png)
 
 ### Bonus Task 2: Github Repository
 
